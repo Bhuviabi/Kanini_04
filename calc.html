@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple calculator</title>
+    <style>
+        #img{
+            text-align: center;
+        }
+        #inputs{
+            text-indent: 600px;
+            height: 30px;
+        }
+        #ref{
+            text-indent: 600px;   
+        }
+    </style>
+    <script>
+        function fetch(){
+        v1=parseFloat(document.f1.val1.value);
+        v2=parseFloat(document.f1.val2.value);
+        op=document.f1.operation.value;
+        switch(op){
+            case "1":
+                tot=v1+v2;
+                break;
+            case "2":
+                tot=v1-v2;
+                break;
+            case "3":
+                tot=v1/v2;
+                break;
+            case "4":
+                tot=v1*v2;
+                break;
+            }
+        document.getElementById('final').innerHTML=tot;       
+    }
+    function ref(){
+        location.reload();
+    }
+    </script>
+</head>
+<body>
+    <form name="f1">
+        <div id="img">
+        <img src="img/calc.jfif" height="400px" >   
+        </div>
+        <div id="inputs">
+        <label>input 1:</label><input type="number" name="val1" required/><br>
+        </div>
+        <div id="inputs">
+        <label>input 2:</label><input type="number" name="val2" required>
+        </div>
+        <div id="inputs">
+            <label>Select Operations</label>
+            <select name="operation" required>
+                <option selected>select</option>
+                <option value="1">ADD</option>
+                <option value="2">SUB</option>
+                <option value="3">DIV</option>
+                <option value="4">MUL</option>
+            </select>
+            <br>
+        </div>
+        <div id="ref">
+        <button type="button" onclick="ref()"><img src="img/Refresh.jfif" height=50px ></button>
+        <button type="button" onclick="fetch()"><img src="img/equal.png"height=50px></button>
+        <H1 id="final"></H1>
+        </div>
+    </form>
+
+</body>
+</html>
